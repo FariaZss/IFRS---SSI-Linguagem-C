@@ -73,6 +73,114 @@ int main(){
     
 }
 
+==
+
+
+/*
+Criar uma matriz de inteiro de dimensão X (veja sobre o valor do X abaixo).
+A matriz deve ser preenchida automaticamente, fazendo uso de laço, o primeiro número deve ser Y e ir
+aumentando em Y unidades em cada célula.
+********Você deve criar uma função que recebe como parâmetro a matriz e o número da coluna; essa função deve
+        calcular a soma da coluna indicada.
+Apresentar:
+***a - A matriz preenchida (usando laço)
+***b - Soma de cada uma das linhas; (usar função)
+c - Média dos elementos; (usar laço)
+d - Percorrer a matriz e verificar qual o Maior número ímpar; (usar laço)
+e - Quantidade de números divisíveis por 3; (usar laço)
+O programa deve imprimir o NOME e o CPF do programador.
+Para calcular o X: pegue o segundo dígito do seu CPF, realize o resto da divisão por 6 e some 5; Por
+exemplo, se o seu segundo dígito é 8, o resto da divisão por 6 é 2. Somando cinco dá 7.
+Para calcular o Y: pegue o terceiro dígito do seu CPF e some 9. Se o seu terceiro dígito é 5, seu Y é 14.
+
+
+CÁLCULO X E Y
+870
+
+7 mod 6 = 1 
+1 + 5 = 6 = X
+
+0 + 9  = 9
+0 + 5 = 5 = Y
+
+
+*/
+
+#define DIMENSAO 6
+
+#include <stdio.h>
+
+//SOMA DAS COLUNAS
+int somaColuna(int mtz[DIMENSAO][DIMENSAO], int y){
+    
+    int soma=0;
+    int x;
+    
+    for(y=0;y<DIMENSAO;y++){
+            soma = 0;
+        for(x=0;x<DIMENSAO;x++){
+            soma += mtz[x][y];
+        }
+        printf("A soma da coluna %d é %d\n", y, soma); 
+    }
+
+    return soma;
+}
+
+//SOMA DAS LINHAS
+int somaLinha(int mtz[DIMENSAO][DIMENSAO], int x){
+    
+    int soma=0;
+    int y;
+    
+    for(int x=0;x<DIMENSAO;x++){
+            soma = 0;
+        for(int y=0;y<DIMENSAO;y++){
+            soma += mtz[x][y];
+        }
+            
+        printf("A soma da linha %d é %d\n", x, soma); 
+    }
+    
+    return soma;
+}
+
+int main(){
+
+	int mtz[DIMENSAO][DIMENSAO];
+    int x, y;
+    int valorY = 5; 
+    int count; // contador
+    
+    printf("\t\tMATRIZ 6X6 DE SOMA 5\n\n");
+    
+    
+	for(x=0;x<DIMENSAO;x++){
+		for(y=0;y<DIMENSAO;y++){
+		    valorY += 5;
+			mtz[x][y] = valorY;
+			printf("\t%4d ", mtz[x][y]);
+			
+		
+		}
+	    printf("\n\n");
+	}
+	
+	for(x=0;x<DIMENSAO;x++){
+	    
+	}
+    
+        
+    somaColuna(mtz, y);
+    somaLinha(mtz, x);
+    
+    printf("\n");
+
+	return 0; 
+}
+
+
+
 
 
 
